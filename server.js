@@ -21,10 +21,12 @@ const app = express();
 
 app.use(morgan('common'))
 app.use(express.json())
+
+
+app.use('/app/api', productRoutes)
 app.use(notFoundMiddlewarev)
 app.use(errorHandlerMiddleware)
 
-app.use('/app/api', productRoutes)
 
 
 const start = async() => {

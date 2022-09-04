@@ -14,6 +14,14 @@
         "company": "ShoAds & Sons Construction Company"
     },
     {
+        "name": "2-Bed detached building",
+        "price": 5000,
+        "rating": 6.0,
+        "company": "ShoAds & Sons Construction Company",
+        "featured": true
+    },  
+
+    {
         "name": "25 creates of egg",
         "price": 200,
         "rating": 5.0,
@@ -25,6 +33,13 @@
         "price": 2000,
         "rating": 7.0,
         "company": "MallamTY & Sons"
+    },
+    {
+        "name": "100 creates of eggs",
+        "price": 2000,
+        "rating": 6.0,
+        "company": "MallamTY & Sons",
+        "featured": true
     },
     {
         "name": "Wedding gown",
@@ -39,6 +54,13 @@
         "company": "Kheffy Fashion House"
     },
     {
+        "name": "Men suite & tie",
+        "price": 1000,
+        "rating": 7.0,
+        "company": "Kheffy Fashion House",
+        "featured": true
+    },
+    {
         "name": "Company painiting",
         "price": 2500,
         "rating": 8.0,
@@ -49,6 +71,13 @@
         "price": 3000,
         "rating": 7.0,
         "company": "Aloma Group of Company"
+    },
+    {
+        "name": "Painting of a company in a renovation process",
+        "price": 10000,
+        "rating": 7.0,
+        "company": "Aloma Group of Company",
+        "featured": true
     }
     
     
