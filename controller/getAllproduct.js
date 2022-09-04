@@ -4,7 +4,7 @@ const Product = require('../model/productModel')
 
 
 const getAllproductStatic = async (req, res) => {
-    const products = await Product.find({featured: true})
+    const products = await Product.find({}).select('name price')
     return res.status(200).json({
         message: `Success ..........`,
         nbHits: products.length,
@@ -15,7 +15,7 @@ const getAllproductStatic = async (req, res) => {
 }
 
 const getAllproduct = async (req, res) => {
-    const {featured, company, name} = req.query;
+    const {featured, company, name, sort, fields} = req.query;
     const queryObject = {};
 
     if (featured) {
@@ -27,12 +27,31 @@ const getAllproduct = async (req, res) => {
     }
 
     if (name) {
-        queryObject.name = name
+        queryObject.name = {$regex: name, $options: 'i'}
     }
+
+    let result = Product.find(queryObject)
+
+    // Sorting the contents of the database
+
+    if (sort) {
+        const sortList = sort.split(',').join(' ')
+        result = result.sort(sortList)
+        
+    } else {
+        result = result.sort('createdAt')
+    }
+
+    // Selecting the contents to return from the database based on values supplied by the user
+
+    if (fields) {
+        const fieldList = fields.split(',').join(' ')
+        result = result.select(fieldList)
+    }
+
     
-    console.log((queryObject));
+    const products = await result
     
-    const products = await Product.find(queryObject)
     return res.status(200).json({
         message: `Success ..........`,
         nbHits: products.length,

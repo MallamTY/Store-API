@@ -5,9 +5,9 @@ const router = express.Router();
 
 
 
-router.get('/finder', getAllproductStatic)
+router.get('/products/static', getAllproductStatic)
 
-router.get('/items', getAllproduct)
+router.get('/products/dynamic', getAllproduct)
 
 
 
