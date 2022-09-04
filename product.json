@@ -1,0 +1,56 @@
+
+[ 
+    {
+        "name": "Land",
+        "price": 500,
+        "rating": 5.0,
+        "company": "ShoAds & Sons Construction Company"
+
+    },
+    {
+        "name": "2-Bed detached building",
+        "price": 5000,
+        "rating": 6.0,
+        "company": "ShoAds & Sons Construction Company"
+    },
+    {
+        "name": "25 creates of egg",
+        "price": 200,
+        "rating": 5.0,
+        "company": "MallamTY & Sons"
+    },
+
+    {
+        "name": "500 day old chicken",
+        "price": 2000,
+        "rating": 7.0,
+        "company": "MallamTY & Sons"
+    },
+    {
+        "name": "Wedding gown",
+        "price": 1000,
+        "rating": 8.0,
+        "company": "Kheffy Fashion House"
+    },
+    {
+        "name": "Habayah",
+        "price": 100,
+        "rating": 7.0,
+        "company": "Kheffy Fashion House"
+    },
+    {
+        "name": "Company painiting",
+        "price": 2500,
+        "rating": 8.0,
+        "company": "Aloma Group of Company"
+    },
+    {
+        "name": "Painting materials",
+        "price": 3000,
+        "rating": 7.0,
+        "company": "Aloma Group of Company"
+    }
+    
+    
+    
+]

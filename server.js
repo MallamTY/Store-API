@@ -1,5 +1,7 @@
 const express = require('express')
 const morgan = require('morgan')
+require('express-async-errors')
+
 
 
 const {PORT, MONGO_URI} = require('./accessories/configuration');
@@ -8,6 +10,7 @@ const {PORT, MONGO_URI} = require('./accessories/configuration');
 const notFoundMiddlewarev = require('./errors/notFoundError')
 const errorHandlerMiddleware = require('./errors/generalError');
 const connectDB = require('./db/connect');
+const productRoutes  = require('./routes/productRoutes');
 
 
 
@@ -20,6 +23,8 @@ app.use(morgan('common'))
 app.use(express.json())
 app.use(notFoundMiddlewarev)
 app.use(errorHandlerMiddleware)
+
+app.use('/app/api', productRoutes)
 
 
 const start = async() => {
