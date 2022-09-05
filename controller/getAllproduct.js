@@ -1,4 +1,5 @@
 const express = require("express");
+const match = require("nodemon/lib/monitor/match");
 const Product = require('../model/productModel')
 
 
@@ -15,7 +16,7 @@ const getAllproductStatic = async (req, res) => {
 }
 
 const getAllproduct = async (req, res) => {
-    const {featured, company, name, sort, fields} = req.query;
+    const {featured, company, name, sort, fields, numericFields} = req.query;
     const queryObject = {};
 
     if (featured) {
@@ -49,8 +50,22 @@ const getAllproduct = async (req, res) => {
         result = result.select(fieldList)
     }
 
-    
     const products = await result
+
+    if(numericFields) {
+        const operators = {
+            '>': '$gt',
+            '>=': '$gte',
+            '<': '$lt',
+            '<=': '$lte',
+            '=': '$eq',
+        }
+
+        const regEx = /\b(<|>|<=|>=|=)\b/g
+        const filter = numericFields.replace(regEx, (match) => `-${operators[match]}-`)
+
+        console.log((filter));
+    }
     
     return res.status(200).json({
         message: `Success ..........`,
